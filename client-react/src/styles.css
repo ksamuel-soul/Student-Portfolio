@@ -1,0 +1,412 @@
+/* 🌈 STUDENT PORTFOLIO HUB - COMPLETE THEME */
+/* ------------------------------------------ */
+/* Designed for: React Frontend (client-react/src) */
+
+/* ---------- ROOT COLORS ---------- */
+:root {
+  --primary: #6366f1;
+  --secondary: #22d3ee;
+  --accent: #10b981;
+  --danger: #ef4444;
+  --warning: #f59e0b;
+  --bg-dark: #0a0f1f;
+  --bg-card: rgba(17, 24, 39, 0.85);
+  --text-light: #f3f4f6;
+  --text-muted: #9ca3af;
+}
+
+/* ---------- GLOBAL ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", "Segoe UI", sans-serif;
+  color: var(--text-light);
+  background:
+    radial-gradient(1200px 800px at 10% 0%, rgba(99,102,241,0.25), transparent 60%),
+    radial-gradient(1400px 700px at 90% 10%, rgba(34,197,94,0.15), transparent 60%),
+    linear-gradient(180deg, #0a0f1f 0%, #111827 100%);
+  min-height: 100vh;
+  padding-bottom: 50px;
+}
+
+/* ---------- HEADER ---------- */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin: 40px auto;
+  padding: 30px 40px;
+  max-width: 1100px;
+  border-radius: 24px;
+  background: var(--bg-card);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+}
+
+.header:hover {
+  transform: scale(1.01);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+}
+
+.header img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid rgba(255, 255, 255, 0.7);
+  object-fit: cover;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.header img:hover {
+  transform: scale(1.05);
+  filter: brightness(1.15);
+}
+
+.header h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.header p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* ---------- TOOLBAR ---------- */
+.toolbar {
+  display: flex;
+  gap: 12px;
+  margin: 20px auto;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1000px;
+}
+
+.toolbar input,
+.toolbar select {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(17, 24, 39, 0.9);
+  color: var(--text-light);
+  font-size: 0.95rem;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.toolbar input:focus,
+.toolbar select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.4);
+}
+
+/* ---------- BUTTONS ---------- */
+.btn {
+  padding: 10px 16px;
+  border-radius: 12px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: all 0.25s ease;
+  background: linear-gradient(135deg, var(--secondary), var(--accent));
+  color: #0b1020;
+  box-shadow: 0 4px 16px rgba(34, 211, 238, 0.25);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.4);
+}
+
+.btn.warn {
+  background: linear-gradient(135deg, var(--warning), var(--danger));
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(245, 158, 11, 0.25);
+}
+
+/* ---------- SKILL TAGS ---------- */
+.tag {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #22d3ee, #a78bfa);
+  color: #0b1020;
+  font-weight: 700;
+  font-size: 0.8rem;
+  margin: 4px 4px 0 0;
+  transition: all 0.25s ease;
+}
+
+.tag:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(34, 211, 238, 0.6);
+}
+
+/* ---------- GRID ---------- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 22px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ---------- PROJECT CARD ---------- */
+.card {
+  background: var(--bg-card);
+  border-radius: 18px;
+  padding: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(99,102,241,0.1), rgba(34,197,94,0.1));
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55);
+}
+
+.card h3 {
+  margin-bottom: 6px;
+  color: #fff;
+  font-weight: 600;
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  margin-bottom: 10px;
+}
+
+.card .tag {
+  margin-top: 6px;
+}
+
+/* ---------- CARD ACTIONS ---------- */
+.card-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.card-actions a,
+.card-actions button {
+  text-decoration: none;
+  font-weight: 600;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card-actions a.repo {
+  background: linear-gradient(135deg, #06b6d4, #4f46e5);
+  color: #fff;
+}
+
+.card-actions a.demo {
+  background: linear-gradient(135deg, #22c55e, #84cc16);
+  color: #0b1020;
+}
+
+.card-actions button.edit {
+  background: linear-gradient(135deg, #f59e0b, #ef4444);
+  color: #fff;
+}
+
+.card-actions button.delete {
+  background: linear-gradient(135deg, #f43f5e, #dc2626);
+  color: #fff;
+}
+
+.card-actions a:hover,
+.card-actions button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+}
+
+/* ---------- MODAL (Add Project / Add Achievement) ---------- */
+.dialog {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  animation: fadeIn 0.3s ease;
+  backdrop-filter: blur(6px);
+}
+
+.dialog .card {
+  width: min(550px, 90vw);
+  background: rgba(17, 24, 39, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+  padding: 24px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  animation: slideUp 0.3s ease;
+}
+
+.dialog .card h3 {
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.dialog .card form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.dialog .card input,
+.dialog .card textarea,
+.dialog .card select {
+  width: 100%;
+  background: rgba(31, 41, 55, 0.9);
+  color: #f3f4f6;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: all 0.25s ease;
+  font-family: "Poppins", sans-serif;
+}
+
+.dialog .card input:focus,
+.dialog .card textarea:focus,
+.dialog .card select:focus {
+  border-color: #22d3ee;
+  box-shadow: 0 0 8px rgba(34, 211, 238, 0.5);
+}
+
+.dialog .card textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+/* ---------- MODAL BUTTONS ---------- */
+.dialog .card form > div {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+/* ---------- ANIMATIONS ---------- */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    text-align: center;
+    padding: 24px;
+  }
+  .header img {
+    width: 100px;
+    height: 100px;
+  }
+  .toolbar {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* 🌟 ACHIEVEMENTS SECTION */
+.achievements-section {
+  margin: 60px auto;
+  max-width: 1100px;
+  padding: 0 20px;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #22d3ee, #10b981);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.empty-text {
+  color: #9ca3af;
+  text-align: center;
+  font-size: 1rem;
+  margin-top: 20px;
+}
+
+/* Make achievement cards look consistent with projects */
+.achievements-section .card {
+  background: rgba(17, 24, 39, 0.85);
+  border-radius: 16px;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+}
+
+.achievements-section .card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.6);
+}
+
+.achievements-section .card h3 {
+  color: #ffffff;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.achievements-section .card p {
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  margin-bottom: 5px;
+}
+
+.achievements-section .date-text {
+  font-size: 0.8rem;
+  color: #22d3ee;
+  margin-bottom: 8px;
+}
